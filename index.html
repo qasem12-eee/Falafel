@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="بوفيه فلافل — عصائر | فلافل، شورما، محروقات، عصائر طازجة ومشروبات طبيعية.">
+  <meta property="og:title" content="بوفيه فلافل — عصائر">
+  <meta property="og:description" content="سرّ الخلطة الأصيلة والإنعاش الطبيعي — شركة فروت مكس">
+  <meta property="og:type" content="website">
+
+  <title>بوفيه فلافل — عصائر | فلافل، شورما، عصائر طازجة</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #4caf50;
+      --primary-dark: #2e7d32;
+      --primary-light: #66bb6a;
+      --accent: #ff9800;
+      --accent-hover: #f57c00;
+      --gold: #ffd700;
+
+      --bg-main: #0f1410;
+      --bg-secondary: #1a1f1a;
+      --card-bg: #1e251e;
+      --card-bg-hover: #252d25;
+
+      --text-main: #f0f0f0;
+      --text-muted: #9e9e9e;
+      --border: #2a332a;
+
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 999px;
+
+      --shadow: 0 8px 25px rgba(0, 0, 0, .45);
+      --shadow-hover: 0 16px 35px rgba(0, 0, 0, .55);
+      --transition: .3s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: "Tajawal", system-ui, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* ===================== الشريط العلوي ===================== */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 20px;
+      background: rgba(15, 20, 16, .94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      width: 230px;
+      padding: 10px 42px 10px 16px;
+      color: var(--text-main);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-box input:focus {
+      outline: none;
+      width: 270px;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, .16);
+    }
+
+    /* ===================== البانر ===================== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 95px 20px 115px;
+      color: #fff;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(15, 20, 16, .88), rgba(46, 125, 50, .58)),
+        url("https://images.unsplash.com/photo-1593001874117-c99c800e3eb7?auto=format&fit=crop&w=1350&q=80")
+        center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(76, 175, 80, .16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 60px;
+      background: var(--bg-main);
+      clip-path: ellipse(60% 100% at 50% 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, .6);
+      animation: fadeDown 1s ease;
+    }
+
+    .brand-line {
+      margin-bottom: 28px;
+      font-size: clamp(.95rem, 2.5vw, 1.1rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #ffd700, #ffb300 40%, #ff8f00 70%, #ffd700);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, .45));
+      animation: fadeUp 1s ease .2s both, goldShine 4s ease-in-out infinite;
+    }
+
+    .hero-subtitle {
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+      color: #d0e8d0;
+      animation: fadeUp 1s ease .25s both;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      background: var(--accent);
+      border-radius: var(--radius-full);
+      box-shadow: 0 6px 20px rgba(255, 152, 0, .38);
+      transition: var(--transition);
+    }
+
+    .cta-btn:hover,
+    .cta-btn:focus-visible {
+      background: var(--accent-hover);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(255, 152, 0, .55);
+    }
+
+    /* ===================== المميزات ===================== */
+    .features {
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      max-width: 1100px;
+      margin: -50px auto 45px;
+      padding: 0 20px;
+    }
+
+    .feature-box {
+      padding: 20px;
+      font-weight: 700;
+      text-align: center;
+      color: var(--primary-light);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-icon {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 2rem;
+    }
+
+    /* ===================== الأقسام ===================== */
+    .categories-bar {
+      display: flex;
+      gap: 10px;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary) var(--bg-secondary);
+    }
+
+    .categories-bar::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .categories-bar::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+      border-radius: 3px;
+    }
+
+    .categories-bar::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .cat-chip {
+      flex-shrink: 0;
+      padding: 10px 20px;
+      color: var(--text-main);
+      font-weight: 700;
+      white-space: nowrap;
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-full);
+      transition: var(--transition);
+    }
+
+    .cat-chip:hover,
+    .cat-chip:focus-visible {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .cat-chip.active {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, .35);
+    }
+
+    .section-wrapper {
+      max-width: 1300px;
+      margin: 0 auto 45px;
+      padding: 0 20px;
+      scroll-margin-top: 85px;
+    }
+
+    .section-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .section-header::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .section-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      font-size: 1.7rem;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, .35);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--primary-light);
+    }
+
+    .section-count {
+      margin-right: auto;
+      padding: 3px 12px;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+    }
+
+    /* ===================== شبكة الأصناف ===================== */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+    }
+
+    /* ===================== بطاقة الصنف ===================== */
+    .item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: linear-gradient(180deg, #20281f, #171d17);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .45);
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    }
+
+    .item:hover,
+    .item:focus-within {
+      transform: translateY(-6px);
+      border-color: rgba(76, 175, 80, .75);
+      box-shadow:
+        0 16px 35px rgba(0, 0, 0, .55),
+        0 0 0 1px rgba(76, 175, 80, .25),
+        0 10px 30px rgba(76, 175, 80, .18);
+    }
+
+    /* ===================== صور الطعام ===================== */
+    .image-wrapper {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: #141a14;
+    }
+
+    .item-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .6s cubic-bezier(.2, .7, .3, 1), filter .4s ease;
+    }
+
+    .item:hover .item-image {
+      transform: scale(1.09);
+      filter: brightness(1.07) saturate(1.08);
+    }
+
+    .image-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 45%;
+      background: linear-gradient(to top, rgba(15, 20, 16, .92), transparent);
+      pointer-events: none;
+    }
+
+    /* ===================== الشارة ===================== */
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 3;
+      padding: 5px 12px;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .3px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff9800, #f57c00);
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 14px rgba(255, 152, 0, .45);
+    }
+
+    /* ===================== محتوى البطاقة ===================== */
+    .item-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 14px 14px 12px;
+      margin-top: -28px;
+    }
+
+    .item-title {
+      margin-bottom: 4px;
+      font-size: 1.02rem;
+      font-weight: 800;
+      line-height: 1.35;
+      color: #eaffea;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, .6);
+    }
+
+    .item-title.placeholder {
+      color: var(--text-muted);
+      font-size: .85rem;
+      font-style: italic;
+      font-weight: 600;
+      opacity: .7;
+    }
+
+    .item-description {
+      flex-grow: 1;
+      margin-bottom: 10px;
+      font-size: .8rem;
+      line-height: 1.5;
+      color: #b9c7b9;
+    }
+
+    .item-description.placeholder {
+      font-size: .74rem;
+      font-style: italic;
+      opacity: .55;
+    }
+
+    .item-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .price {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 12px;
+      font-size: .95rem;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(255, 152, 0, .95), rgba(245, 124, 0, .95));
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 14px rgba(255, 152, 0, .35);
+    }
+
+    .price::before {
+      content: "💰";
+      font-size: .85em;
+    }
+
+    /* ===================== التذييل ===================== */
+    .site-footer {
+      position: relative;
+      margin-top: 60px;
+      padding: 45px 20px 30px;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0f0a, #1a251a);
+      border-top: 1px solid var(--border);
+    }
+
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: 0;
+      left: 0;
+      height: 30px;
+      background: #0a0f0a;
+      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    }
+
+    .footer-text {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .contact-info {
+      font-size: .95rem;
+      color: var(--primary-light);
+    }
+
+    .contact-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+    }
+
+    /* ===================== زر العودة ===================== */
+    .to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 150;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+      color: #fff;
+      background: var(--primary);
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, .4);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .to-top:hover,
+    .to-top:focus-visible {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .no-results {
+      display: none;
+      padding: 60px 20px;
+      font-size: 1.2rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .no-results.show {
+      display: block;
+    }
+
+    /* ===================== حركات ===================== */
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes goldShine {
+      0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, .45));
+      }
+      50% {
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, .8));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 1.1rem;
+      }
+
+      .search-box input {
+        width: 145px;
+      }
+
+      .search-box input:focus {
+        width: 175px;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .section-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+      }
+
+      .brand-line {
+        letter-spacing: 1.5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-bar">
+    <div class="logo">
+      🍽️ بوفيه <span>فلافل عصائر</span>
+    </div>
+
+    <div class="search-box">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="🔍 ابحث عن صنف..."
+        aria-label="ابحث في قائمة الطعام"
+        autocomplete="off">
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>بوفيه فلافل — عصائر</h1>
+      <p class="brand-line">شركة فروت مكس</p>
+      <p class="hero-subtitle">سرّ الخلطة الأصيلة والإنعاش الطبيعي</p>
+      <a href="#categories" class="cta-btn">تصفح قائمة الطعام </a>
+    </div>
+  </section>
+
+  <section class="features" aria-label="مميزات المطعم">
+    <div class="feature-box">
+      <span class="feature-icon">🌱</span>
+      مكونات طازجة 100%
+    </div>
+    <div class="feature-box">
+      <span class="feature-icon">⚡</span>
+      خدمة وسرعة فائقة
+    </div>
+    <div class="feature-box">
+      <span class="feature-icon">🍹</span>
+      عصائر طبيعية بدون إضافات
+    </div>
+    <div class="feature-box">
+      <span class="feature-icon">🔥</span>
+      طعم أصيل لا يُقاوم
+    </div>
+  </section>
+
+  <nav class="categories-bar" id="categories" aria-label="تصفح الأقسام"></nav>
+
+  <main id="mainContent"></main>
+
+  <div class="no-results" id="noResults" role="status">
+    😕 لا توجد نتائج مطابقة لبحثك
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="العودة إلى الأعلى">↑</button>
+
+  <footer class="site-footer">
+    <p class="footer-text">
+      زورونا لتجربة لا تُنسى — الطعم الأصيل والانتعاش الطبيعي بانتظاركم!
+    </p>
+    <p class="contact-info">
+      📍 الرياض شارع الدائري الجنوبي الفرعي |
+      📞 للطلبات: <a href="tel:+966559930447" class="contact-link">055 993 0447</a> |
+      🕐 يومياً على مدار الساعه
+    </p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    /* ============================================================
+       بيانات الأقسام
+       name  : اسم الصنف
+       desc  : وصف تسويقي
+       price : السعر بالريال، 0 يعني مخفي
+       badge : شارة اختيارية
+    ============================================================ */
+    const emptyItem = {
+      name: "",
+      desc: "",
+      price: 0,
+      badge: ""
+    };
+
+    const createItems = count =>
+      Array.from({ length: count }, () => ({ ...emptyItem }));
+const sectionsData = [
+  {
+    id: "AF1",
+    name: "سندويشات",
+    icon: "🥙",
+    items: [
+      {
+        name: "سندويش برجر دجاج ",
+        desc: " ",
+        price: 7,
+        badge: "الأكثر طلباً"
+      },
+      {
+        name: "سندويش برجر لحم ",
+        desc: " ",
+        price: 8,
+        badge: ""
+      },
+      {
+        name: "سندويش دجاح ",
+        desc: " ",
+        price: 4,
+        badge: ""
+      },
+    {
+        name: "سندويش كبده",
+        desc: " ",
+        price: 4,
+        badge: ""
+      },
+    {
+        name: " سندوتش لحم مفررم ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+    {
+        name: "سندوتش بيض مسلوق ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+    {
+        name: "سندوتش بيض مقلي ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+    {
+        name: "سندوتش تورتيلا",
+        desc: " ",
+        price:6,
+        badge: "كبير 10ريال"
+      },
+    {
+        name: "سندويش تونه",
+        desc: " ",
+        price: 5,
+        badge: "جديد"
+      },
+        {
+        name: "سندوتش جبن مربئ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+    {
+        name: "سندوتش جبن سائل",
+        desc: " ",
+        price: 2,
+        badge: ""
+      },
+    {
+        name: "سندوتش شكشوكه",
+        desc: " ",
+        price: 4,
+        badge: ""
+      },
+    {
+        name: "سندوتش فلافل سادة ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+        {
+        name: "سندوتش فلافل مشكل ",
+        desc: " ",
+        price: 4,
+        badge: ""
+      },
+        {
+        name: "سندوتش فلافل مع البيض ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+        {
+        name: "سندوتش فول ",
+        desc: " ",
+        price: 2,
+        badge: ""
+      },
+        {
+        name: "سندوتش لحم ",
+        desc: " ",
+        price: 4,
+        badge: ""
+      },
+        {
+        name: "سندوتش فول مع البيض ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+       
+    ]
+  },
+    {
+  id: "AF2",
+  name: "شاورما",
+  icon: "🌯",
+  items: [
+    {
+      name: "شاورما صغير عادي ",
+      desc: " ",
+      price: 6,
+      badge: "الأكثر طلباً"
+    },
+    {
+      name: "شاورما صغير حراق",
+      desc: " ",
+      price: 6,
+      badge: ""
+    },
+    {
+      name: "شاورما صغير مقمر ",
+      desc: " ",
+      price: 6,
+      badge: ""
+    },
+    {
+      name: "شاورما صاروخ عادي ",
+      desc: " ",
+      price: 9,
+      badge: ""
+    },
+          {
+      name: "شاورما صاروخ حراق ",
+      desc: " ",
+      price: 9,
+      badge: ""
+    },
+          {
+      name: "شاورما صاروخ مقمر ",
+      desc: " ",
+      price: 9,
+      badge: ""
+    },
+          {
+      name: "شاورما عربي صغير عادي ",
+      desc: " ",
+      price: 11,
+      badge: ""
+    },
+          {
+      name: "شاورما عربي كبير عادي ",
+      desc: " ",
+      price: 22,
+      badge: ""
+    },
+          {
+      name: "شاورما عربي صغير حراق ",
+      desc: " ",
+      price: 11,
+      badge: ""
+    },
+          {
+      name: "شاورما عربي كبير حراق ",
+      desc: " ",
+      price: 22,
+      badge: ""
+    },
+          {
+      name: "شاورما عربي صغير مقمر ",
+      desc: " ",
+      price: 11,
+      badge: ""
+    },
+          {
+      name: "صحن شورما صغير  ",
+      desc: " ",
+      price: 12,
+      badge: ""
+    },
+          {
+      name: "صحن شورما كبير ",
+      desc: " ",
+      price: 23,
+      badge: ""
+    },
+          {
+      name: "شاورما كودو ",
+      desc: " ",
+      price: 10,
+      badge: ""
+    },
+          {
+      name: "شاورما صاروخ دبل ",
+      desc: " ",
+      price: 15,
+      badge: ""
+    },
+      
+  ]
+},
+      {
+    id: "AF3",
+    name: "محروقات",
+    icon: "🍟",
+    items: [
+      {
+        name: "بازليا تونه ",
+        desc: " ",
+        price: 9,
+        badge: ""
+      },
+      {
+        name: "بزليا مع البيض ",
+        desc: " ",
+        price: 9,
+        badge: ""
+      },
+           {
+        name: "بازليا ساده ",
+        desc: " ",
+        price: 8,
+        badge: ""
+      },
+           {
+        name: "بيض عيون ",
+        desc: " ",
+        price: 7,
+        badge: ""
+      },
+           {
+        name: "بيض فرن",
+        desc: " ",
+        price: 7,
+        badge: ""
+      },
+           {
+        name: "بيض مقلي ",
+        desc: " ",
+        price: 7,
+        badge: "جديد"
+      },
+           {
+        name: "تونه جبنن ",
+        desc: " ",
+        price: 11,
+        badge: ""
+      },
+           {
+        name: "تونه ساده ",
+        desc: " ",
+        price: 10,
+        badge: ""
+      },
+        
+   {
+        name: "شكشوكه عدني ",
+        desc: " ",
+        price: 8,
+        badge: ""
+      },
+           {
+        name: "شكشوكه عادي ",
+        desc: " ",
+        price: 7,
+        badge: ""
+      },
+           {
+        name: "صحن بطاطس ",
+        desc: " ",
+        price: 5,
+        badge: ""
+      },
+           {
+        name: "صحن فلافل مشكل ",
+        desc: " ",
+        price: 7,
+        badge: ""
+      },
+           {
+        name: "فاصوليا تونه ",
+        desc: " ",
+        price: 9,
+        badge: ""
+      },
+           {
+        name: "فاصوليا ساده ",
+        desc: " ",
+        price: 8,
+        badge: ""
+      },
+           {
+        name: "فاصوليا مع الببض ",
+        desc: " ",
+        price:9,
+        badge: ""
+      },
+        
+     {
+        name: "فول ساده ",
+        desc: " ",
+        price:8,
+        badge: "جديد"
+      },
+     {
+        name: "فول مع البيض ",
+        desc: " ",
+        price:9,
+        badge: ""
+      },
+     {
+        name: "كبدة",
+        desc: " ",
+        price:15,
+        badge: ""
+      },
+     {
+        name: "كبده جبن ",
+        desc: " ",
+        price:17,
+        badge: ""
+      },
+     {
+        name: "لحسه",
+        desc: " ",
+        price:10,
+        badge: ""
+      },
+        {
+        name: "مجموع ملكي ",
+        desc: " ",
+        price:15,
+        badge: "جديد"
+      },
+        {
+        name: "مقلقل جبن دجاج ",
+        desc: " ",
+        price:17,
+        badge: ""
+      },
+        {
+        name: "مقلقل دجاج ",
+        desc: " ",
+        price:15,
+        badge: ""
+      },
+        {
+        name: "مقلقل لحم ",
+        desc: " ",
+        price:15,
+        badge: "جديد"
+      },
+        {
+        name: "مقلقل لحم جبن ",
+        desc: " ",
+        price:17,
+        badge: ""
+      },
+        
+      ]
+         },
+    {
+    id: "AF4",
+    name: "خلطات",
+    icon: "🥗",
+    items: [
+      {
+        name: "عرايسي",
+        desc: " صغير 7 ريال وسط 10 ريال ",
+        price:12,
+        badge: ""
+      },
+      {
+        name: "مهيتو كودرد ",
+        desc: " او 12 ريال ",
+        price: 14,
+        badge: ""
+      },
+      {
+        name: "مهيتو سفن ",
+        desc: " او 10 ريال ",
+        price: 12,
+        badge: ""
+      },
+      {
+        name: "عوار قلب ",
+        desc: " صغير 6 ريال وسط 8 ريال ",
+        price: 10,
+        badge: ""
+      },
+      {
+        name: "كوكتيل ",
+        desc: " صغير 6 ريال وسط 8 ريال",
+        price: 10,
+        badge: ""
+      },
+      {
+        name: "اصفهاني ",
+        desc: "صغير 6 ريال وسط 8 ريال",
+        price: 10,
+        badge: ""
+      },
+    ]
+  },
+    {
+    id: "AF5",
+    name: "سلطات",
+    icon: "🥬",
+    items: [
+      {
+        name: "سلطة فواكة  ",
+        desc: " صغير 15 ريال ",
+        price: 25,
+        badge: ""
+      },
+      {
+        name: "كاسات فواكة   ",
+        desc: " صغير 12 ريال وسط 14 ريال ",
+        price: 20,
+        badge: ""
+          },
+     
+    ]
+  },
+
+      {
+    id: "AF6",
+    name: "عصائر",
+    icon: "🍹",
+    items: [
+      {
+        name: "عصير كبس جزر ",
+        desc: " صغير 6ريال",
+        price:10,
+        badge: "طازج"
+      },
+      {
+        name:"عصير أفوكادو",
+        desc: " صغير 7ريال وسط 9ريال ",
+        price:12,
+        badge: ""
+      },
+              {
+        name:"عصير اناناس ",
+        desc: " صغير 5ريال وسط 7ريال ",
+        price:9,
+        badge: ""
+      },
+              {
+        name:"عصير برتقال خلاط",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9,
+        badge: ""
+      },
+              {
+        name:"عصير برتقال كبس ",
+        desc: " صغير 7 ريال وسط 10 ريال ",
+        price:12,
+        badge: ""
+      },
+              {
+        name: "عصير بطيخ",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9,
+        badge: ""
+      },
+        
+              {
+        name: "عصير تفاخ اخضر ",
+        desc: " صغير 7 ريال وسط 10 ريال ",
+        price:12,
+        badge: ""
+      },
+              {
+        name:"عصير توت",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9,
+        badge: ""
+      },
+              {
+        name: "عصير جوافه ",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9, 
+        badge: ""
+      },
+              {
+        name: "عصير رمان",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9,
+        badge: ""
+      },
+              {
+        name: "عصير شمام",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9, 
+        badge: ""
+      },
+              {
+        name: "عصير شمندر ",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9,
+        badge: ""
+      },
+              {
+        name: "عصير موز ",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9,
+        badge: ""
+      },
+              {
+        name: "عصير عنب ",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9, 
+        badge: ""
+      },
+              {
+        name: "عصير ليمون ",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9, 
+        badge: ""
+      },
+              {
+        name: "عصير مامجو",
+        desc: "صغير 5 ريال وسط 7 ريال ",
+        price:9,
+        badge: ""
+      },
+              {
+        name: "عصير فروله",
+        desc: " صغير 5 ريال وسط 7 ريال ",
+        price:9, 
+        badge: ""
+      },
+              {
+        name: "عصير عرايسي 1L&1.5L",
+        desc: "1لتر 18 ريال ",
+        price: 23,
+        badge: ""
+      },
+              {
+        name: "عصير برتقال كبس 1L&1.5L",
+        desc: " 1 لتر 22 ريال ",
+        price: 27,
+        badge: ""
+      },
+              {
+        name: "عصير لتر لترونص ",
+        desc: " 1لتر 18 ريال ",
+        price: 22,
+        badge: ""
+      },
+              {
+        name: "بوكس عصيرمشكل ",
+        desc: "10حبه",
+        price: 70,
+        badge: ""
+      },
+              {
+        name: "بوكس عيصر مشكل",
+        desc: "15 حبه ",
+        price: 100,
+        badge: ""
+      },
+    ]
+  },
+
+      {
+    id: "AF7",
+    name: "مشروبات",
+    icon: "🥤",
+    items: [
+      {
+        name: "شاي ساده ",
+        desc: " ",
+        price: 1,
+        badge: ""
+      },
+      {
+        name: "شاي عدني ",
+        desc: " ",
+        price: 2,
+        badge: ""
+      },
+        {
+        name: "كافي حليب ",
+        desc: " ",
+        price: 2,
+        badge: ""
+      },
+        {
+        name: "كافي ساده",
+        desc: " ",
+        price: 1,
+        badge: ""
+      },
+        {
+        name: "ببسي",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+        {
+        name: " ببسي دايت ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+        {
+        name: "حمضيات ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+        {
+        name: "ديو ",
+        desc: " ",
+        price:3.,
+        badge: ""
+      },
+        
+    {
+        name: "سفن",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+        {
+        name: "ميراند برتقال ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+        {
+        name: "ميراند تفاح ",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+        {
+        name: "ماء ",
+        desc: " ",
+        price: 1,
+        badge: ""
+      },
+        ]
+  },
+{
+    id: "AF8",
+    name: "شباتي",
+    icon: "🫓",
+    items: [
+      {
+        name: "شباتي تونة جبن",
+        desc: " ",
+        price: 6,
+        badge: ""
+      },
+      {
+        name: "شباتي بيض",
+        desc: " ",
+        price: 3,
+        badge: ""
+      },
+  {
+        name: "شباتي بيض وجبن",
+        desc: " ",
+        price: 4,
+        badge: ""
+      },
+  {
+        name: "شباتي تونه ",
+        desc: " ",
+        price: 5,
+        badge: ""
+      },
+  {
+        name: "شباتي كبده",
+        desc: " ",
+        price: 6,
+        badge: ""
+      },
+  {
+        name: "شباتي كبده جبن ",
+        desc: " ",
+        price: 6,
+        badge: ""
+      },
+  {
+        name: "شباتي لحم جبن ",
+        desc: " ",
+        price: 6,
+        badge: ""
+      },
+  {
+        name: "شباتي مقلقل دجاج ",
+        desc: " ",
+        price: 5,
+        badge: ""
+      },
+  {
+        name: "شباتي مقلقل جبن دجاج",
+        desc: " ",
+        price: 5,
+        badge: ""
+      },
+  {
+        name: "شباتي لحم ",
+        desc: " ",
+        price: 5,
+        badge: ""
+      },
+  {
+        name: "شباتي تونه جبن ",
+        desc:" ",
+        price: 6,
+        badge: ""
+      },
+  {
+        name: "شباتي مقلق لحم ",
+        desc: " ",
+        price: 6,
+        badge: "جديد"
+      },
+    ]
+  },
+{
+    id: "AF9",
+    name: "عريكه ومعصوبه",
+    icon: "🍯",
+    items: [
+      {
+        name: "عريكه دبل قشطه ",
+        desc: "",
+        price: 15,
+        badge: "مميز"
+      },
+      {
+        name: "عريكه عرايسي ",
+        desc: " ",
+        price: 18,
+        badge: ""
+      },
+  {
+        name: "عريكه ملكي ",
+        desc: " ",
+        price: 15,
+        badge: ""
+      },
+  {
+        name: "فتة تمر  ",
+        desc: " ",
+        price: 6,
+        badge: ""
+      },
+  {
+        name: "معصوب دبل قشطه ",
+        desc: " ",
+        price: 15,
+        badge: ""
+      },
+  {
+        name: "معصوب عرايسي",
+        desc: " ",
+        price: 18,
+        badge: ""
+      },
+  {
+        name: "معصوب قشطه  العسل ",
+        desc: " ",
+        price: 12,
+        badge: ""
+      },
+  {
+        name: "معصوب ملكي ",
+        desc: " ",
+        price: 14,
+        badge: ""
+      },
+    ]
+  }
+];
+
+    const fallbackImage =
+      "data:image/svg+xml;utf8," +
+      encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">
+          <rect width="400" height="300" fill="#141a14"/>
+          <text x="50%" y="50%" fill="#4caf50" font-size="22"
+                font-family="Tajawal, sans-serif" text-anchor="middle" dy=".3em">
+            صورة الصنف
+          </text>
+        </svg>
+      `);
+
+    const getImagePath = (folder, index) =>
+      `images/${folder}/af${index}.jpg`;
+
+    const escapeHTML = value =>
+      String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+    /* ============================================================
+       بناء شريط الأقسام
+    ============================================================ */
+    const categoriesBar = document.getElementById("categories");
+    const mainContent = document.getElementById("mainContent");
+
+    const buildCategoryBar = () => {
+      const fragment = document.createDocumentFragment();
+
+      sectionsData.forEach((section, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "cat-chip" + (index === 0 ? " active" : "");
+        button.textContent = `${section.icon} ${section.name} (${section.items.length})`;
+        button.setAttribute("aria-label", `الانتقال إلى قسم ${section.name}`);
+
+        button.addEventListener("click", () => {
+          document
+            .querySelectorAll(".cat-chip")
+            .forEach(chip => chip.classList.remove("active"));
+
+          button.classList.add("active");
+
+          document
+            .getElementById(`section-${section.id}`)
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        fragment.appendChild(button);
+      });
+
+      categoriesBar.appendChild(fragment);
+    };
+
+    /* ============================================================
+       بناء بطاقة الصنف
+    ============================================================ */
+    const createItemCard = (section, item, index) => {
+      const card = document.createElement("article");
+      card.className = "item";
+      card.dataset.name = item.name || "";
+      card.dataset.section = section.name;
+
+      const image = document.createElement("img");
+      image.className = "item-image";
+      image.loading = "lazy";
+      image.decoding = "async";
+      image.alt = item.name || `صنف من قسم ${section.name}`;
+      image.src = getImagePath(section.id, index + 1);
+
+      image.addEventListener("error", () => {
+        image.src = fallbackImage;
+      }, { once: true });
+
+      const imageWrapper = document.createElement("div");
+      imageWrapper.className = "image-wrapper";
+      imageWrapper.appendChild(image);
+
+      const content = document.createElement("div");
+      content.className = "item-content";
+
+      const title = document.createElement("h3");
+      title.className = item.name ? "item-title" : "item-title placeholder";
+      title.textContent = item.name || "➕ أضف اسم الصنف";
+
+      const description = document.createElement("p");
+      description.className = item.desc
+        ? "item-description"
+        : "item-description placeholder";
+      description.textContent = item.desc || "✏️ أضف عبارة تسويقية";
+
+      content.append(title, description);
+
+      if (item.price > 0) {
+        const footer = document.createElement("div");
+        footer.className = "item-footer";
+
+        const price = document.createElement("span");
+        price.className = "price";
+        price.textContent = `${item.price} ريال`;
+
+        footer.appendChild(price);
+        content.appendChild(footer);
+      }
+
+      card.append(imageWrapper, content);
+
+      if (item.badge) {
+        const badge = document.createElement("span");
+        badge.className = "badge";
+        badge.textContent = item.badge;
+        card.prepend(badge);
+      }
+
+      return card;
+    };
+
+    /* ============================================================
+       بناء الأقسام
+    ============================================================ */
+    const buildSections = () => {
+      const fragment = document.createDocumentFragment();
+
+      sectionsData.forEach(section => {
+        const wrapper = document.createElement("section");
+        wrapper.className = "section-wrapper";
+        wrapper.id = `section-${section.id}`;
+        wrapper.setAttribute("aria-labelledby", `title-${section.id}`);
+
+        const header = document.createElement("div");
+        header.className = "section-header";
+
+        header.innerHTML = `
+          <div class="section-icon" aria-hidden="true">${section.icon}</div>
+          <h2 class="section-title" id="title-${section.id}">${escapeHTML(section.name)}</h2>
+          <span class="section-count">${section.items.length} صنف</span>
+        `;
+
+        const grid = document.createElement("div");
+        grid.className = "menu-grid";
+
+        section.items.forEach((item, index) => {
+          grid.appendChild(createItemCard(section, item, index));
+        });
+
+        wrapper.append(header, grid);
+        fragment.appendChild(wrapper);
+      });
+
+      mainContent.appendChild(fragment);
+    };
+
+    /* ============================================================
+       البحث مع debounce
+    ============================================================ */
+    const searchInput = document.getElementById("searchInput");
+    const noResults = document.getElementById("noResults");
+
+    const normalize = value =>
+      value.trim().toLowerCase();
+
+    const handleSearch = () => {
+      const query = normalize(searchInput.value);
+      let visibleCount = 0;
+
+      document.querySelectorAll(".item").forEach(card => {
+        const name = normalize(card.dataset.name || "");
+        const section = normalize(card.dataset.section || "");
+        const isMatch = !query || name.includes(query) || section.includes(query);
+
+        card.style.display = isMatch ? "" : "none";
+
+        if (isMatch) visibleCount++;
+      });
+
+      document.querySelectorAll(".section-wrapper").forEach(section => {
+        const items = section.querySelectorAll(".item");
+        const hiddenItems = section.querySelectorAll('.item[style*="display: none"]');
+
+        section.style.display =
+          items.length > 0 && hiddenItems.length === items.length
+            ? "none"
+            : "";
+      });
+
+      noResults.classList.toggle("show", visibleCount === 0);
+    };
+
+    const debounce = (callback, delay = 180) => {
+      let timeoutId;
+
+      return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => callback(...args), delay);
+      };
+    };
+
+    /* ============================================================
+       زر العودة للأعلى
+    ============================================================ */
+    const toTopButton = document.getElementById("toTop");
+
+    const setupToTopButton = () => {
+      window.addEventListener("scroll", () => {
+        toTopButton.classList.toggle("show", window.scrollY > 400);
+      }, { passive: true });
+
+      toTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    };
+
+    /* ============================================================
+       التشغيل
+    ============================================================ */
+    buildCategoryBar();
+    buildSections();
+    setupToTopButton();
+
+    searchInput.addEventListener("input", debounce(handleSearch));
+  </script>
+</body>
+</html>
